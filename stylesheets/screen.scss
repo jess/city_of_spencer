@@ -1,0 +1,72 @@
+@import "partials/base";
+@import "html5";
+@import "compass";
+@import "blueprint";
+@import "partials/menu";
+@import "blueprint/typography";
+@import "fancy-buttons";
+@import "partials/forms";
+
+body {
+  background: image_url('/images/layout/camaro-04.jpg') repeat top center;
+  @include blueprint-typography(true);
+}
+
+#container {
+  background: image_url('/images/layout/camaro.jpg') repeat-x top center;
+  min-height: 495px;
+}
+
+.contain {
+  @include container;
+}
+
+header {
+  @extend .contain;
+}
+
+#logo {
+  @include column(12);
+}
+
+.big_header {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+
+.slider_searcher {
+  @include container;
+  margin-top: 35px;
+  .slider {
+    @include column(12);
+    h1 {
+      @extend .big_header;
+    }
+    img {
+      border: 5px solid rgba(#000, .5);
+
+    }
+  }
+  .searcher {
+    background: $dark;
+    @include column(11.5, true);
+    margin-top: 65px;
+    margin-left: 20px;
+    min-height: 255px;
+    h2 {
+      @extend .big_header;
+      border-bottom: solid 1px $orange;
+      font-size: 1.5em;
+    }
+    .find {
+      @include column(5);
+      @include prepend(.5);
+    }
+    .sell {
+      @include prepend(.5);
+      @include column(5, true);
+      @include append(.5);
+    }
+  }
+}

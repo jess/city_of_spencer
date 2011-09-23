@@ -1,0 +1,103 @@
+/* ----------------------------  NAVIGATION (HORIZONTAL)  Custom PrintSouth, INc. ---------------------------  */
+
+$menu_padding: 18px;
+
+
+nav {
+  @include column(12,true);
+  @include border-radius(5px);
+  //@include linear-gradient(color-stops(#686767, #ccc), left top);
+  //@include background-image(linear-gradient(#ebebeb, #313131));
+  //background: $dark;
+  //border-top: 1px solid $dark;
+  ul.nav {
+    color:white;
+    font-size:17px;
+    line-height:35px;
+    list-style:none outside none;
+    padding:0 12px;
+    text-decoration:none;
+    z-index:5000;
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-top: 30px;
+	
+	li { 
+      list-style:none;
+      padding: 0;
+        
+      }
+	
+	a {
+		display:block;
+		padding:0px $menu_padding;
+		color:#fff;
+		text-decoration:none;
+		font-size:14px;    
+		font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+		text-transform:uppercase; 
+    //border-right: 1px solid #5c5d5d;
+    //border-right: 1px solid $lblue;
+    &.last {
+      border-right: none;
+    }
+	}  
+  a.subsActive, a:hover {
+    color:#ccc;
+  }
+	a:active, .active a {
+		color:blue;
+	} 
+	li {
+		float:left;
+		position:relative; 
+		/*line-height: 100%;*/
+	}   
+	ul {
+		position:absolute;
+		display:none;
+		top:35px;
+		padding:0px 0;
+		width:200px;  
+				/*line-height: 100%; */
+	}
+	ul li.active { height:auto; background-image:none; } 
+	ul li {
+		display:inline; 
+				/*line-height: 100%; */
+	}   
+	li ul li a {
+		padding:0px 18px;
+		float:left;
+		font-size:.675em;
+		line-height:26px;
+		color:#3f7cba;
+		width:157px;
+		background:#000;
+		text-transform:none;
+		border-bottom: #ccc dotted 1px;
+	}     
+	li ul li a span {
+		border-bottom:dotted 1px #666;
+	}    
+	li ul li a:hover {
+		color:#666;
+	}      
+	ul ul {
+		top:auto;
+	}     
+	li ul ul {
+		left:8em;
+		margin:0px 0 0 10px;
+	}  
+	li:hover ul ul, li:hover ul ul ul, li:hover ul ul ul ul {
+		display:none;
+	}  
+	li:hover ul, li li:hover ul, li li li:hover ul, li li li li:hover ul {
+		display:block;
+	}
+  }
+}
+
+

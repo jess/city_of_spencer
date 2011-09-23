@@ -1,0 +1,29 @@
+.searcher {
+  .find {
+    fieldset {
+      margin: 8px 0;
+      label {
+        float: left;
+        width: 30%;
+        color: white;
+        text-transform: uppercase;
+      }
+      input {
+        float: left;
+        width: 100px;
+        border: none;
+        padding: 5px 5px;
+        background: darken($dark, 15%);
+        color: $blue;
+        margin-left: 18px;
+        &.left{
+          width: 42px;
+        }
+        &.right {
+          margin-left: 6px;
+          width: 42px;
+        }
+      }
+    }
+  }
+}
