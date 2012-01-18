@@ -1,9 +1,110 @@
 @import "partials/base";
-@import "html5";
+//@import "html5";
 @import "compass";
 @import "blueprint";
 @import "partials/menu";
 @import "blueprint/typography";
 @import "fancy-buttons";
 @import "partials/forms";
+
+
+.background {
+  background: url('/images/layout/back320.jpg') center top no-repeat fixed;
+  background-size: cover;
+  font-size: 1em;
+}
+#container {
+  position: relative;
+  width: 80%;
+  margin: 1% auto;
+  padding: 5%;
+  background: rgba(#fff, .80);
+  @include border-radius(15px);
+  @include text-shadow(rgba(255, 255, 255, 0.6), 1px, 1px, 0); 
+  .ui-content {
+    //@include clearfix;
+    
+  }
+}
+div[data-role="page"] {
+  background: transparent;
+}
+.pg_wrapper {
+  padding: 5%;
+  background: rgba(#fff, .80);
+  @include border-radius(15px);
+  width: 90%;
+  margin: 1% auto;
+  padding: 5%;
+  
+}
+.videos {
+  $ratio: 1.777;
+  text-align: center;
+  iframe {
+    width: 260px ;
+    height: (260px / $ratio);
+  }
+}
+#logo {
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+}
+
+@media screen and (max-width: 320px) { /* Specific to this particular image */
+  .background {
+    h1, h2, h3, h4, h5 {
+      font-size: 1.2em;
+    }
+    background: url('/images/layout/back320.jpg') center top no-repeat fixed;
+  }
+  .videos {
+    $ratio: 1.777;
+    text-align: center;
+    iframe {
+      width: 260px ;
+      height: (260px / $ratio);
+    }
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 770px) {
+  .background {
+    background: url('/images/layout/back720.jpg') center top no-repeat fixed;
+  }
+  .videos {
+    $ratio: 1.777;
+    text-align: center;
+    iframe {
+      width: 300px ;
+      height: (300px / $ratio);
+    }
+  }
+}
+@media screen and (min-width: 771px) {
+  .background {
+    background: url('/images/layout/back1024.jpg') center top no-repeat fixed;
+  }
+  .videos {
+    $ratio: 1.777;
+    text-align: center;
+    iframe {
+      width: 560px ;
+      height: (560px / $ratio);
+    }
+  }
+}
+
+/* Portrait */
+@media screen and (orientation:portrait) {
+    /* Portrait styles */
+}
+/* Landscape */
+@media screen and (orientation:landscape) {
+    /* Landscape styles */
+}
+
+
 
