@@ -7,7 +7,7 @@
 @import "fancy-buttons";
 @import "partials/forms";
 
-
+/* Main styles */
 .background {
   background: url('/images/layout/back320.jpg') center top no-repeat fixed;
   background-size: cover;
@@ -29,7 +29,27 @@
 div[data-role="page"] {
   background: transparent;
 }
+div[data-role="content"] {
+  img {
+    max-width: 100%;
+    display: block;
+    margin: 5px auto;
+  }
+}
+ul[data-role="listview"] {
+  opacity: .85;
+}
+img.float_right {
+  float: right;
+  margin: 5px 5px 5px 15px;
+  
+}
+img.border {
+  padding: 5px;
+  background: #fff;
+}
 .pg_wrapper {
+  @include clearfix;
   padding: 5%;
   background: rgba(#fff, .80);
   @include border-radius(15px);
@@ -47,13 +67,46 @@ div[data-role="page"] {
   }
 }
 #logo {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   display: block;
 }
 
-@media screen and (max-width: 320px) { /* Specific to this particular image */
+.footer {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 20%;
+  .visit {
+    font-size: 110%;
+    color: #294d24;
+    @include text-shadow(rgba(255, 255, 255, 0.0), 0px, 0px, 0);
+  }
+  .social-facebook {
+    background: image_url('social/facebook.png') center center;
+    margin-left: 25%;
+  }
+  .social-twitter {
+    background: image_url('social/twitter.png') center center;
+    margin-left: 2.5%;
+  }
+  .icon {
+      width: 25%;
+      background-size: cover;
+      padding-bottom: 25%;
+      //height: 25%;
+      float: left;
+      display: block;
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+  }
+}
+
+/* iPhone Port. */
+@media screen and (max-width: 320px) { 
   .background {
     h1, h2, h3, h4, h5 {
       font-size: 1.2em;
@@ -68,11 +121,50 @@ div[data-role="page"] {
       height: (260px / $ratio);
     }
   }
+  .footer {
+    .social-facebook {
+      background: image_url('social/facebook_white.png') center center;
+      margin-left: 25%;
+    }
+    .social-twitter {
+      background: image_url('social/twitter_white.png') center center;
+      margin-left: 2.5%;
+    }
+    .visit {
+      color: #fff;
+    }
+    
+  }
 }
 
-@media screen and (min-width: 321px) and (max-width: 770px) {
+/* iPhone Landscape */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .background {
+    background: url('/images/layout/back480.jpg') center top no-repeat fixed;
+  }
+  #logo {
+    width: 90%;
+  }
+  .videos {
+    $ratio: 1.777;
+    $video_width: 400px;
+    text-align: center;
+    iframe {
+      width: $video_width;
+      height: ($video_width / $ratio);
+    }
+  }
+}
+
+/* iPad port */
+@media screen and (min-width: 481px) and (max-width: 770px) {
   .background {
     background: url('/images/layout/back720.jpg') center top no-repeat fixed;
+    background-size: cover;
+  }
+  #logo {
+    width: 75%;
+    max-width: 700px;
   }
   .videos {
     $ratio: 1.777;
@@ -82,10 +174,29 @@ div[data-role="page"] {
       height: (300px / $ratio);
     }
   }
+  .footer {
+    .social-facebook {
+      background: image_url('social/facebook_white.png') center center;
+      margin-left: 25%;
+    }
+    .social-twitter {
+      background: image_url('social/twitter_white.png') center center;
+      margin-left: 2.5%;
+    }
+    .visit {
+      color: #fff;
+    }
+  }
 }
+
+/* iPad Landscape and larger */
 @media screen and (min-width: 771px) {
   .background {
     background: url('/images/layout/back1024.jpg') center top no-repeat fixed;
+  }
+  #logo {
+    width: 60%;
+    max-width: 700px;
   }
   .videos {
     $ratio: 1.777;
@@ -93,6 +204,20 @@ div[data-role="page"] {
     iframe {
       width: 560px ;
       height: (560px / $ratio);
+    }
+  }
+  .footer {
+    .social-facebook {
+      background: image_url('social/facebook_white.png') center center;
+      margin-left: 25%;
+    }
+    .social-twitter {
+      background: image_url('social/twitter_white.png') center center;
+      margin-left: 2.5%;
+    }
+    .visit {
+      color: #fff;
+      opacity: .8;
     }
   }
 }

@@ -8,3 +8,6 @@ $(document).ready(function(){
     }).trigger('orientationchange');
     
 });
+$(document).bind("mobileinit", function(){
+  $.mobile.touchOverflowEnabled = true;
+});

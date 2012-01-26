@@ -122,6 +122,7 @@ nav ul.nav li:hover ul, nav ul.nav li li:hover ul, nav ul.nav li li li:hover ul,
   outline: none;
 }
 
+/* Main styles */
 .background {
   background: url("/images/layout/back320.jpg") center top no-repeat fixed;
   background-size: cover;
@@ -147,7 +148,29 @@ div[data-role="page"] {
   background: transparent;
 }
 
+div[data-role="content"] img {
+  max-width: 100%;
+  display: block;
+  margin: 5px auto;
+}
+
+ul[data-role="listview"] {
+  opacity: .85;
+}
+
+img.float_right {
+  float: right;
+  margin: 5px 5px 5px 15px;
+}
+
+img.border {
+  padding: 5px;
+  background: #fff;
+}
+
 .pg_wrapper {
+  overflow: hidden;
+  *zoom: 1;
   padding: 5%;
   background: rgba(255, 255, 255, 0.8);
   -moz-border-radius: 15px;
@@ -170,14 +193,45 @@ div[data-role="page"] {
 }
 
 #logo {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   display: block;
 }
 
+.footer {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 20%;
+}
+.footer .visit {
+  font-size: 110%;
+  color: #294d24;
+  text-shadow: rgba(255, 255, 255, 0) 0px 0px 0;
+}
+.footer .social-facebook {
+  background: url('../images/social/facebook.png?1327435660') center center;
+  margin-left: 25%;
+}
+.footer .social-twitter {
+  background: url('../images/social/twitter.png?1327435616') center center;
+  margin-left: 2.5%;
+}
+.footer .icon {
+  width: 25%;
+  background-size: cover;
+  padding-bottom: 25%;
+  float: left;
+  display: block;
+  opacity: .7;
+}
+.footer .icon:hover {
+  opacity: 1;
+}
+
+/* iPhone Port. */
 @media screen and (max-width: 320px) {
-  /* Specific to this particular image */
   .background {
     background: url("/images/layout/back320.jpg") center top no-repeat fixed;
   }
@@ -192,10 +246,47 @@ div[data-role="page"] {
     width: 260px;
     height: 146.314px;
   }
+
+  .footer .social-facebook {
+    background: url('../images/social/facebook_white.png?1327589353') center center;
+    margin-left: 25%;
+  }
+  .footer .social-twitter {
+    background: url('../images/social/twitter_white.png?1327589407') center center;
+    margin-left: 2.5%;
+  }
+  .footer .visit {
+    color: #fff;
+  }
 }
-@media screen and (min-width: 321px) and (max-width: 770px) {
+/* iPhone Landscape */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .background {
+    background: url("/images/layout/back480.jpg") center top no-repeat fixed;
+  }
+
+  #logo {
+    width: 90%;
+  }
+
+  .videos {
+    text-align: center;
+  }
+  .videos iframe {
+    width: 400px;
+    height: 225.098px;
+  }
+}
+/* iPad port */
+@media screen and (min-width: 481px) and (max-width: 770px) {
   .background {
     background: url("/images/layout/back720.jpg") center top no-repeat fixed;
+    background-size: cover;
+  }
+
+  #logo {
+    width: 75%;
+    max-width: 700px;
   }
 
   .videos {
@@ -205,10 +296,28 @@ div[data-role="page"] {
     width: 300px;
     height: 168.824px;
   }
+
+  .footer .social-facebook {
+    background: url('../images/social/facebook_white.png?1327589353') center center;
+    margin-left: 25%;
+  }
+  .footer .social-twitter {
+    background: url('../images/social/twitter_white.png?1327589407') center center;
+    margin-left: 2.5%;
+  }
+  .footer .visit {
+    color: #fff;
+  }
 }
+/* iPad Landscape and larger */
 @media screen and (min-width: 771px) {
   .background {
     background: url("/images/layout/back1024.jpg") center top no-repeat fixed;
+  }
+
+  #logo {
+    width: 60%;
+    max-width: 700px;
   }
 
   .videos {
@@ -217,6 +326,19 @@ div[data-role="page"] {
   .videos iframe {
     width: 560px;
     height: 315.138px;
+  }
+
+  .footer .social-facebook {
+    background: url('../images/social/facebook_white.png?1327589353') center center;
+    margin-left: 25%;
+  }
+  .footer .social-twitter {
+    background: url('../images/social/twitter_white.png?1327589407') center center;
+    margin-left: 2.5%;
+  }
+  .footer .visit {
+    color: #fff;
+    opacity: .8;
   }
 }
 /* Portrait */
